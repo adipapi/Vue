@@ -1,24 +1,14 @@
 <template>
-    <v-card class="mx-auto" max-width="400" color="red">
-      <v-card-title class="title">{{title}}</v-card-title>
-      <v-card-text>hello</v-card-text>
-    </v-card>
+  <v-card height="100%">
+    <v-card-title class="pink white--text">{{props.title}}</v-card-title>
+    <v-card-text></v-card-text>
+  </v-card>
 </template>
 
 <script>
 /* eslint-disable */
 export default {
   name: "Card",
-  data(data) {
-    return {
-      title: "Welcome to Your Vue.js App"
-    };
-  }
+  props: ['props']
 };
 </script>
-
-<style scoped>
-.title {
-  background: palevioletred;
-}
-</style>
