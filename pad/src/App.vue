@@ -1,15 +1,15 @@
 <template>
-  <v-app id='app'>
-    <router-view />
+  <v-app id="app">
+    <HomePage />
   </v-app>
 </template>
 
 <script>
+import HomePage from "./components/HomePage";
 export default {
   name: "App",
-
-  components: {},
-
-  data: () => ({})
+  components: {
+    HomePage
+  }
 };
 </script>
