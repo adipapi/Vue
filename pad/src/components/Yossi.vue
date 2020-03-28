@@ -1,5 +1,5 @@
 <template>
-    <Card title='יוסי' />
+    <Card title="title"  />
 </template>
 
 <script>
@@ -9,6 +9,7 @@ export default {
   name: 'Yossi',
   components: {
     Card
-  }
+  },
+  props: ['title']
 };
 </script>

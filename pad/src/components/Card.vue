@@ -2,7 +2,7 @@
   <v-card height="100%">
     <v-card-title class="pink white--text">{{title}}</v-card-title>
     <v-card-text>
-      <v-btn> hello </v-btn>
+      <slot name="card-content"></slot>
     </v-card-text>
   </v-card>
 </template>

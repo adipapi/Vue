@@ -10,7 +10,7 @@
     <v-flex xs9>
       <v-layout column fill-height justify-space-around>
         <v-flex xs6>
-          <Yossi />
+          <Yossi :title=currentYossi />
         </v-flex>
         <v-flex xs4>
           <MoreInfo />
@@ -31,6 +31,11 @@ export default {
     Menu,
     Yossi,
     MoreInfo
+  },
+  data: function() {
+    return {
+      currentYossi:"aaa"
+    }
   }
 };
 </script>
