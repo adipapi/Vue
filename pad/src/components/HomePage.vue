@@ -3,14 +3,14 @@
     <v-flex xs2>
       <v-layout column fill-height justify-space-around>
         <v-flex xs11>
-          <Menu />
+          <Menu :onMenuBtnClick="this.updateYossi" />
         </v-flex>
       </v-layout>
     </v-flex>
     <v-flex xs9>
       <v-layout column fill-height justify-space-around>
         <v-flex xs6>
-          <Yossi :title=currentYossi />
+          <Yossi :title="currentYossi" />
         </v-flex>
         <v-flex xs4>
           <MoreInfo />
@@ -27,14 +27,19 @@ import MoreInfo from "./MoreInfo";
 
 export default {
   name: "HomePage",
+  data: function() {
+    return {
+      currentYossi: ""
+    };
+  },
   components: {
     Menu,
     Yossi,
     MoreInfo
   },
-  data: function() {
-    return {
-      currentYossi:"aaa"
+  methods: {
+    updateYossi(newYossi) {
+      this.currentYossi = newYossi;
     }
   }
 };

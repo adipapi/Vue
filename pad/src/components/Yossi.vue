@@ -1,15 +1,15 @@
 <template>
-    <Card title="title"  />
+  <Card :title="title" />
 </template>
 
 <script>
-import Card from './Card';
+import Card from "./Card";
 
 export default {
-  name: 'Yossi',
+  name: "Yossi",
   components: {
     Card
   },
-  props: ['title']
+  props: ["title"]
 };
 </script>
