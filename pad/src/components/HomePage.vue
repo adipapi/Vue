@@ -3,17 +3,22 @@
     <v-flex xs2>
       <v-layout column fill-height justify-space-around>
         <v-flex xs11>
-          <Menu :onMenuBtnClick="this.updateYossi" />
+          <Menu :updateYossisTitle="this.updateYossisTitle" />
         </v-flex>
       </v-layout>
     </v-flex>
     <v-flex xs9>
-      <v-layout column fill-height justify-space-around>
+      <v-layout column fill-height justify-space-around v-if="currentYossiTitle !== 'דואר זבל'">
         <v-flex xs6>
-          <Yossi :title="currentYossi" />
+          <Yossi :title="currentYossiTitle" />
         </v-flex>
         <v-flex xs4>
           <MoreInfo />
+        </v-flex>
+      </v-layout>
+      <v-layout column fill-height justify-space-around v-else>
+        <v-flex xs11>
+          <Yossi :title="currentYossiTitle" />
         </v-flex>
       </v-layout>
     </v-flex>
@@ -29,7 +34,7 @@ export default {
   name: "HomePage",
   data: function() {
     return {
-      currentYossi: ""
+      currentYossiTitle: ""
     };
   },
   components: {
@@ -38,8 +43,8 @@ export default {
     MoreInfo
   },
   methods: {
-    updateYossi(newYossi) {
-      this.currentYossi = newYossi;
+    updateYossisTitle(newTitle) {
+      this.currentYossiTitle = newTitle;
     }
   }
 };

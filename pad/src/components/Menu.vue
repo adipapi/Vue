@@ -1,8 +1,9 @@
 <template>
   <Card title="תפריט">
     <v-btn-toggle borderless slot="card-content" color="blue" class="d-flex flex-column">
-      <MenuButton text="דואר נכנס" :onMenuBtnClick="onMenuBtnClick" />
-      <MenuButton text="דואר יוצא" :onMenuBtnClick="onMenuBtnClick" />
+      <MenuButton text="דואר נכנס" :updateYossisTitle="updateYossisTitle" />
+      <MenuButton text="דואר יוצא" :updateYossisTitle="updateYossisTitle" />
+      <MenuButton text="דואר זבל" :updateYossisTitle="updateYossisTitle" />
     </v-btn-toggle>
   </Card>
 </template>
@@ -17,7 +18,7 @@ export default {
     MenuButton
   },
   props: {
-    onMenuBtnClick: Function
+    updateYossisTitle: Function
   }
 };
 </script>

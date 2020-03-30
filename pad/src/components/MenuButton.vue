@@ -1,5 +1,5 @@
 <template>
-  <v-btn color="white" @click="onMenuBtnClick(text)">{{text}}</v-btn>
+  <v-btn color="white" @click="updateYossisTitle(text)">{{text}}</v-btn>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
       type: String,
       required: true
     },
-    onMenuBtnClick: {
+    updateYossisTitle: {
       type: Function
     }
   }
