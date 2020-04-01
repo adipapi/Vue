@@ -3,14 +3,14 @@
     <v-flex xs2>
       <v-layout column fill-height justify-space-around>
         <v-flex xs11>
-          <Menu :updateYossisTitle="this.updateYossisTitle" />
+          <Menu @updateCurrentPageTitle="currentPageTitle = $event" />
         </v-flex>
       </v-layout>
     </v-flex>
     <v-flex xs9>
-      <v-layout column fill-height justify-space-around v-if="currentYossiTitle !== 'דואר זבל'">
+      <v-layout column fill-height justify-space-around v-if="currentPageTitle !== 'דואר זבל'">
         <v-flex xs6>
-          <Yossi :title="currentYossiTitle" />
+          <CurrentPage :title="currentPageTitle" />
         </v-flex>
         <v-flex xs4>
           <MoreInfo />
@@ -18,7 +18,7 @@
       </v-layout>
       <v-layout column fill-height justify-space-around v-else>
         <v-flex xs11>
-          <Yossi :title="currentYossiTitle" />
+          <CurrentPage :title="currentPageTitle" />
         </v-flex>
       </v-layout>
     </v-flex>
@@ -27,25 +27,20 @@
 
 <script>
 import Menu from "./Menu";
-import Yossi from "./Yossi";
+import CurrentPage from "./CurrentPage";
 import MoreInfo from "./MoreInfo";
 
 export default {
   name: "HomePage",
   data: function() {
     return {
-      currentYossiTitle: ""
+      currentPageTitle: ""
     };
   },
   components: {
     Menu,
-    Yossi,
+    CurrentPage,
     MoreInfo
-  },
-  methods: {
-    updateYossisTitle(newTitle) {
-      this.currentYossiTitle = newTitle;
-    }
   }
 };
 </script>

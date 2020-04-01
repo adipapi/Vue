@@ -1,14 +1,19 @@
 <template>
-  <BaseCard title="מידע נוסף" />
+  <BaseCard :title="title" />
 </template>
 
 <script>
 import BaseCard from "./BaseCard";
 
 export default {
-  name: "MoreInfo",
+  name: "CurrentPage",
   components: {
     BaseCard
+  },
+  props: {
+    title: {
+      type: String
+    }
   }
 };
 </script>

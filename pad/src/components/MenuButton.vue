@@ -1,5 +1,5 @@
 <template>
-  <v-btn color="white" @click="updateYossisTitle(text)">{{text}}</v-btn>
+  <v-btn color="white" @click="changePageTitle()">{{text}}</v-btn>
 </template>
 
 <script>
@@ -8,10 +8,12 @@ export default {
   props: {
     text: {
       type: String,
-      required: true
-    },
-    updateYossisTitle: {
-      type: Function
+      default: "כפתור ללא שם"
+    }
+  },
+  methods: {
+    changePageTitle() {
+      this.$emit('changePageTitle',this.text)
     }
   }
 };
